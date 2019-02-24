@@ -55,6 +55,7 @@ export class AuthService {
     this.httpClient.post(host + this.logoutApi, null);
     this.token = null;
     this.isLogin = false;
+    localStorage.removeItem('currentPresenceDay');
     this.router.navigateByUrl('/login');
   }
 

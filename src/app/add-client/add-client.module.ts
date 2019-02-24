@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AddClientPage } from './add-client.page';
+import { EditNumComponent } from './edit-num/edit-num.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { AddClientPage } from './add-client.page';
     FormsModule,
     RouterModule.forChild([{ path: '', component: AddClientPage }])
   ],
-  declarations: [AddClientPage]
+  declarations: [AddClientPage, EditNumComponent]
 })
 export class AddClientModule {}

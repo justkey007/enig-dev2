@@ -7,6 +7,7 @@ export const environment = {
 };
 
 export const host = 'http://192.168.0.20:5000/api/';
+export const uploadUrl = host + 'uploaddata/';
 
 /*
  * For easier debugging in development mode, you can import the following file
