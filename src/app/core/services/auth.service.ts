@@ -1,9 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
-import { host } from 'src/environments/environment';
-import { tap } from 'rxjs/operators';
-import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { tap } from 'rxjs/operators';
+import { host } from 'src/environments/environment';
 import { PresenceService } from './presence.service';
 
 @Injectable({providedIn: 'root'})
@@ -17,6 +17,7 @@ export class AuthService {
   token;
   isLogin = false;
   loginApi = 'animators/login';
+  logoutApi = 'animators/logout';
 
   checklogin(login: string, password: string) {
     return this.httpClient.post(host + this.loginApi, {
@@ -48,6 +49,13 @@ export class AuthService {
         }
       )
     );
+  }
+
+  logout() {
+    this.httpClient.post(host + this.logoutApi, null);
+    this.token = null;
+    this.isLogin = false;
+    this.router.navigateByUrl('/login');
   }
 
 }
