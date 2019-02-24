@@ -1,0 +1,42 @@
+.orange-logo {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        border-radius: 15px;
+    }
+}
+
+$white-color: #fff;
+$height100: auto;
+
+ion-grid {
+    margin-top: 100px;
+    width:100%;
+    height: $height100;
+    background: #dfdfdf;
+}
+
+ion-row {
+    height: $height100;
+}
+
+ion-col {
+    border: 1px solid #488aff;
+    background: $white-color;
+}
+
+ion-button {
+    font-weight: 300;
+    background-color: transparent !important;
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+    ion-grid {
+        background: $white-color;
+    }
+    ion-col {
+        border: none;
+    }
+}

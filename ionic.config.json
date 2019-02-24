@@ -1,5 +1,7 @@
 {
   "name": "animateur",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

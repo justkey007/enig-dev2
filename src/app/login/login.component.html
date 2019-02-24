@@ -1,0 +1,37 @@
+<!-- <ion-header no-border>
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="log-in"></ion-icon>
+      Connexion
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="orange-logo">
+    <img src="assets/images/orange.png">
+  </div>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center>
+          <ion-icon size="large" name="lock"></ion-icon>
+        </div>
+        <div padding>
+          <ion-item>
+            <ion-input autocomplete="off" #id type="text" placeholder="Identifiant"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-input type="password" #pw placeholder="Mot de passe"></ion-input>
+          </ion-item>
+        </div>
+  
+        <div padding>
+          <app-button title="Se connecter" (click)="checkLogin(id.value, pw.value)" ></app-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
