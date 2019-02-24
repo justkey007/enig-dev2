@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { AlertController } from '@ionic/angular';
-import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-presence',
@@ -11,11 +11,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class PresenceComponent implements AfterViewInit {
   constructor(
       private camera: Camera,
-      private domSatinizer: DomSanitizer,
       private alertController: AlertController
   ) {}
-  
-  image;
 
   async ngAfterViewInit() {
       const alert = await this.alertController.create({
@@ -44,19 +41,15 @@ export class PresenceComponent implements AfterViewInit {
 
   takePicture() {
     const options: CameraOptions = {
-      quality: 710,
-      destinationType: this.camera.DestinationType.FILE_URI,
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE
     };
 
     this.camera.getPicture(options).then((imageData) => {
-    // imageData is either a base64 encoded string or a file URI
-    // If it's base64 (DATA_URL):
     const base64Image = 'data:image/jpeg;base64,' + imageData;
-    this.image = imageData;
-    // this.image = this.domSatinizer.bypassSecurityTrustUrl(base64Image);
-    // document.querySelector('.iimage').appendChild(this.image);
+    // this.image = base64Image;
     }, (err) => {
     // Handle error
     });

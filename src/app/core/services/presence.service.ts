@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+// import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PresenceService {
 
-  constructor() {}
+  constructor(
+    // private geolocation: Geolocation
+  ) {}
 
   setPresenceDay() {
     const date = new Date();
@@ -19,6 +22,12 @@ export class PresenceService {
     } else {
       return false;
     }
+  }
+
+  getLocation() {
+    // this.geolocation.getCurrentPosition().then(
+    //   (resp) => resp.coords
+    //   );
   }
 
 }
